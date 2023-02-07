@@ -47,8 +47,8 @@ services:
     env_file:
       - .env
     ports:
-      - "${AUTHENTIK_PORT_HTTP:-9000}:9000"
-      - "${AUTHENTIK_PORT_HTTPS:-9443}:9443"
+      - "${AUTHENTIK_PORT_HTTP:-80}:80"
+      - "${AUTHENTIK_PORT_HTTPS:-443}:443"
   worker:
     image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2023.1.2}
     restart: unless-stopped
