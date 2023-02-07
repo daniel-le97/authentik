@@ -13,6 +13,7 @@ services:
       timeout: 5s
     volumes:
       - database:/var/lib/postgresql/data
+      - external: true
     environment:
       - POSTGRES_PASSWORD=${PG_PASS:?database password required}
       - POSTGRES_USER=${PG_USER:-authentik}
@@ -44,6 +45,7 @@ services:
     volumes:
       - ./media:/media
       - ./custom-templates:/templates
+      - external: true
     env_file:
       - .env
     ports:
@@ -71,6 +73,7 @@ services:
       - ./media:/media
       - ./certs:/certs
       - ./custom-templates:/templates
+      - extrnal: true
     env_file:
       - .env
 
