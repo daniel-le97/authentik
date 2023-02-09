@@ -1,0 +1,17 @@
+services:
+  pocketbase:
+    container_name: pocketbase
+    build: .
+    image: pocketbase:latest
+    volumes:
+      - pocketbase-volume:/app/pocketbase/pb_data
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    name: my-network
+
+volumes:
+  pocketbase-volume:
+    name: pocketbase-volume
