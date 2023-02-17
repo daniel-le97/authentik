@@ -60,5 +60,7 @@ services:
       - .env
 
 volumes:
+  database:
+    driver: local
   redis:
     driver: local
