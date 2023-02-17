@@ -21,6 +21,7 @@ services:
     environment:
       AUTHENTIK_REDIS__HOST: redis
       AUTHENTIK_POSTGRESQL__HOST: ${PG_HOST}
+      AUTHENTIK_POSTGRESQL__PORT: ${PG_PORT}
       AUTHENTIK_POSTGRESQL__USER: ${PG_USER}
       AUTHENTIK_POSTGRESQL__NAME: ${PG_DB}
       AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
@@ -39,6 +40,7 @@ services:
     environment:
       AUTHENTIK_REDIS__HOST: redis
       AUTHENTIK_POSTGRESQL__HOST: ${PG_HOST}
+      AUTHENTIK_POSTGRESQL__PORT: ${PG_PORT}
       AUTHENTIK_POSTGRESQL__USER: ${PG_USER}
       AUTHENTIK_POSTGRESQL__NAME: ${PG_DB}
       AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
@@ -58,7 +60,5 @@ services:
       - .env
 
 volumes:
-  database:
-    driver: local
   redis:
     driver: local
